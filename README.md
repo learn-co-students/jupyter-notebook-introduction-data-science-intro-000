@@ -3,7 +3,7 @@
 
 ### Introduction
 
-So far, many of the readings and all of the labs you have been working with have been interactive.  You are working in an environment that allows us to both display text, and run Python code.  In this lesson, we explore Jupyter, the software powering these interactive documents.
+So far, many of the readings and all of the labs you have been working with have been interactive.  You are working in an environment that allows us to both display text and run Python code.  In this lesson, we explore Jupyter, the software powering these interactive documents.
 
 ### Jupyter Background
 
@@ -27,15 +27,19 @@ If we wish to quickly add a new cell we can do so with the following steps:
 
 * Make sure we are not in insert mode, but in escape mode
     * *Remember we can tell we are in insert mode when we have a green border around our cell.*
-    * To get out of insert mode and into escape mode, press the escape key.
+    * To get out of insert mode and into escape mode, press shift + enter.  Another option is to press the escape key.
     * You will no longer see a cell bordered in green.
-* Then press the letter `b`
+* Then press the letter `b` to create a new cell.
 
 #### Deleting cells
 
 To delete a cell we once again should be in escape mode, and then press the `x` key.
 
-Of course, we'll want a way to undo our deletion.  You can press d to undo deletion of a cell.  Note that this is different from `cmd + z`.  Pressing `cmd + z` undoes our changes inside of a cell, but pressing `d` from escape mode is to undo changing a cell in it's entirety.
+Of course, we'll want a way to undo our deletion.  From escape mode, you can press `z` to undo deletion of a cell.  Note that this is different from `cmd + z`.  Pressing `cmd + z` while in insert mode undoes any changes inside of a cell while, whether these changes be deletions or text insertions.  Pressing `z` from escape mode undoes the deletion a cell.
+
+Go to escape mode and press `x`.  This cell disappears!
+
+Then bring it back with `z`.
 
 ### Types of Cells
 
@@ -45,25 +49,31 @@ Cells can also have a type of code.  If we are writing in a cell that is for Pyt
 
 
 ```python
-This is a python cell without valid Python so we wil see an error
+This is a python cell without valid Python so we will see an error
 ```
 
 So, a cell must either be of type markdown or of type code, in which case all of the contents must be valid Python.  It cannot be both. We can quickly change a cell from markdown to code with some keyboard shortcuts.
 
-From escape mode, we change a cell to type code by pressing the letter `y`. Add a new cell by pressing the letter `b`, then type `j` to change that cell into type code.  Again, press `shift + enter` to save the changes of the cell. From escape mode, press the letter `m` to change the cell from code to markdown.
+From escape mode, we change a cell to type code by pressing the letter `y`.
+
+Anytime we create a new cell, say with the shortcut key `b`, the new cell will default to code mode.  We can switch to escape mode and press the letter `m` to change the cell from code to markdown.
+
+#### View All Shortcuts
+
+Press the key `h` while in escape mode to view the menu for all of Jupyter's shortcuts.
 
 ### Working with Python in Jupyter
 
 Ok, now that we know a little bit about adding and deleting cells, as well as changing cell types from markdown to code, let's focus on working with Python in Jupyter.  We'll go into a large amount of detail about working with a Jupyter notebook in Python, but the main takeaway is this: if we see a Python cell, we should press `shift + enter` on that cell. 
 
-The major gotcha in working with Python code is that Python will only execute the cells that are run. So for example, just seeing the cell where we define `name` to `'bob'` below does not write that cell to memory.
+The major gotcha in working with Python code is that we must execute the cells in order for Python to register the code in them. So for example, just seeing the cell where we define `name` to `'bob'` below does not write that cell to memory.
 
 
 ```python
 name = 'bob'
 ```
 
-If we try to reference that variable later on withouth having run it, Python will tell us that it is not defined.  
+If we try to reference that variable later on without having executed the cell, Python will tell us that it is not defined.  
 
 
 ```python
@@ -75,7 +85,7 @@ name
 
     NameError                                 Traceback (most recent call last)
 
-    <ipython-input-1-18697449d7c4> in <module>()
+    <ipython-input-4-9bc0cb2ed6de> in <module>()
     ----> 1 name
     
 
@@ -99,7 +109,7 @@ age
 
 As you can see the variable `age` is set to 14, so when the cell is run `14` is displayed underneath.
 
-One tricky thing to note is that assignment, the action of assigning a varible, **does not** have a return a value.  So, even though the cell is run, if the last line of cell is the assigning of a variable, nothing is displayed underneath. 
+One tricky thing to note is that assignment, the action of assigning a variable, **does not** have a return a value.  So, even though the cell is run, if the last line of cell is the assigning of a variable, nothing is displayed underneath. 
 
 
 ```python
@@ -135,6 +145,6 @@ The same thing goes for working through a Readme.  The Readmes will often assign
 
 ### Summary
 
-In this lesson, we learned about Jupyter notebooks.  We saw that in Jupyter notebooks, we can either be in insert mode or escape mode.  While in insert mode, we can edit the cells and undo changes within that cell with `command + z` or `ctl + z`.  In escape mode, we can add cells with `b`, delete a cell with `x`, and undo deletion of a cell with `d`.  We can also change the type of a cell to markdown with `m` and to Python code with `j`.  
+In this lesson, we learned about Jupyter notebooks.  We saw that in Jupyter notebooks, we can either be in insert mode or escape mode.  While in insert mode, we can edit the cells and undo changes within that cell with `cmd + z` on a mac or `ctl + z` on windows.  In escape mode, we can add cells with `b`, delete a cell with `x`, and undo deletion of a cell with `z`.  We can also change the type of a cell to markdown with `m` and to Python code with `y`.  
 
 Then we saw how to work with Python code in Jupyter notebooks.  We saw that to have our code in a cell executed, we need to press `shift + enter`. If we do not do this, then our variables that we assigned in Python are not going to be recognized by Python later on in our Jupyter notebook.
