@@ -35,7 +35,7 @@ If we wish to quickly add a new cell we can do so with the following steps:
 
 To delete a cell we once again should be in escape mode, and then press the `x` key.
 
-Of course, we'll want a way to undo our deletion.  From escape mode, you can press `z` to undo deletion of a cell.  Note that this is different from `cmd + z`.  Pressing `cmd + z` while in insert mode undoes any changes inside of a cell while, whether these changes be deletions or text insertions.  Pressing `z` from escape mode undoes the deletion a cell.
+Of course, we'll want a way to undo our deletion.  From escape mode, you can press `z` to undo deletion of a cell.  Note that this is different from `cmd + z`.  Pressing `cmd + z` while in insert mode undoes any changes inside of a cell while, whether these changes be deletions or text insertions.  Pressing `z` from escape mode undoes the deletion of a cell.
 
 Go to escape mode and press `x`.  This cell disappears!
 
